@@ -24,9 +24,19 @@ class Main extends Component{
             }]
     }
     render(){
+
+        const removePhoto = (postRemoved) =>
+        {
+            this.setState(
+                {
+                    posts: this.state.posts.filter(post => post!==postRemoved)
+                }
+            );
+        }
         return <div>
             <Title title='Photowall'></Title>
-            <Photowall posts={this.state.posts}></Photowall>
+            <Photowall posts={this.state.posts}
+                       onRemovePhoto={removePhoto}></Photowall>
              </div>
     }
 }

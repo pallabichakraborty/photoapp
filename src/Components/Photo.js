@@ -1,5 +1,6 @@
 import React from 'react';
-import '../styles/stylesheet.css'
+import '../styles/stylesheet.css';
+import PropTypes from 'prop-types';
 
 const Photo = (props) =>  {
         const photo= props.photo;
@@ -8,10 +9,17 @@ const Photo = (props) =>  {
                     <img className='photo' src={photo.imageLink} alt={photo.description}></img>
                     <figcaption><p>{photo.description}</p></figcaption>
                     <div className='button-container'>
-                    <button className='remove-button'>Remove</button>
+                    <button className='remove-button' 
+                            onClick={() => {props.onRemovePhoto(photo)}}>Remove</button>
                     </div>
                 </figure>
         );
+}
+
+Photo.propTypes = {
+        key:PropTypes.number.isRequired,
+        photo : PropTypes.object.isRequired,
+        onRemovePhoto: PropTypes.func.isRequired
 }
 
 export default Photo;
