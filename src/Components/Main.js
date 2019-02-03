@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 
 import Title from './Title';
 import Photowall from './Photowall';
+import AddPhoto from './AddPhoto';
+import {Route} from 'react-router-dom';
 
 import '../styles/stylesheet.css';
 
@@ -33,11 +35,20 @@ class Main extends Component{
                 }
             );
         }
-        return <div>
-            <Title title='Photowall'></Title>
-            <Photowall posts={this.state.posts}
-                       onRemovePhoto={removePhoto}></Photowall>
+        return (
+            <div>
+                    <Route exact path="/" render = {() =>(
+                        <div>
+                            <Title title='Photowall'></Title>
+                            <Photowall posts={this.state.posts}
+                                    onRemovePhoto={removePhoto}></Photowall>
+                        </div>
+                    )}/>
+                    
+                    <Route path="/AddPhoto" component ={AddPhoto}/>
+                        
              </div>
+        );
     }
 }
 

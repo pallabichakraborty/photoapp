@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Main from './Components/Main';
+import {BrowserRouter} from 'react-router-dom';
 
 
-ReactDOM.render(<Main></Main>,document.getElementById('root'));
+ReactDOM.render(<BrowserRouter>
+                    <Main></Main>
+                </BrowserRouter>,document.getElementById('root'));
