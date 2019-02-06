@@ -65,3 +65,37 @@ h1 {
     background-size: contain;
     border: none;
 }
+
+.addPhotoForm {
+    max-width: 360px;
+    margin: 0 auto;
+    padding: 45px;
+    text-align: center;
+}
+
+.addPhotoForm input {
+    font-family: sans-serif;
+    background: #f2f2f2;
+    width: 100%;
+    border: none;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+    margin: 0 0 15px;
+}
+
+.addPhotoForm button  {
+    font-family: sans-serif;
+    text-transform: uppercase;
+    background: blue;
+   widows: 100%;
+   border: none;
+   padding: 15px;
+   color: whitesmoke;
+   font-size: 14px;
+   cursor: pointer;
+}
+
+.addPhotoForm button:hover {
+    background: grey;
+}

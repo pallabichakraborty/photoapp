@@ -17,7 +17,6 @@ const Photo = (props) =>  {
 }
 
 Photo.propTypes = {
-        key:PropTypes.number.isRequired,
         photo : PropTypes.object.isRequired,
         onRemovePhoto: PropTypes.func.isRequired
 }
