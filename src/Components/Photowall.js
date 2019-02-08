@@ -11,10 +11,11 @@ const Photowall = (props) =>{
                 <div className='photoGrid'>
                 {props.posts
                       .sort((a,b) =>{return b.id - a.id})
-                      .map((post) => 
+                      .map((post,index) => 
                             <Photo key={post.id} 
                                 photo={post}
-                                onRemovePhoto={props.onRemovePhoto}></Photo>)}
+                                {...props}
+                                index = {index}></Photo>)}
                 </div>
             </div>
             
@@ -22,8 +23,7 @@ const Photowall = (props) =>{
 }
 
 Photowall.propTypes={
-    posts:PropTypes.array.isRequired,
-    onRemovePhoto: PropTypes.func.isRequired
+    posts:PropTypes.array.isRequired
 }
 
 export default Photowall;
