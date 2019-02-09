@@ -13,6 +13,8 @@ const commentReducer = (state ={}, action ) => {
                            {
                             return {...state,[action.postId]:[...state[action.postId],action.comments]}
                            }
+        case 'LOAD_COMMENTS': return action.comments
+
                            
         default: return state
     }
@@ -22,6 +24,7 @@ const postReducer = (state = posts , action) => {
     {
         case 'REMOVE_POST':return [...state.slice(0,action.index),...state.slice(action.index+1)]
         case 'ADD_POST': return [...state,action.photo]
+        case 'LOAD_POSTS': return action.posts
         default:return state;
     }    
 }

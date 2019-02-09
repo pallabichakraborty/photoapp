@@ -11,6 +11,12 @@ import '../styles/stylesheet.css';
 
 class Main extends Component{
 
+    componentDidMount()
+    {
+        this.props.fetchPosts();
+        this.props.startLoadingComments();
+    }
+
     render(){
         return (
             <div>

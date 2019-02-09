@@ -12,7 +12,7 @@ const Photo = (props) =>  {
                     <div className='button-container'>
                     <button className='remove-button' 
                             onClick={() => {
-                                             props.removePost(props.index)
+                                             props.deletePosts(props.index,photo.id)
                                              props.history.push("/")
                                            }
                                     }>Remove</button>

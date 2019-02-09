@@ -17,7 +17,7 @@ const single =(props) => {
     return(
         <div className='single-photo'>
             <Photo photo={photo} {...props} index={index}> </Photo>
-            <Comments addComments={props.addComments} comments={comments} id={id}></Comments>
+            <Comments addComments={props.addComments} comments={comments} id={id} startAddingComments={props.startAddingComments}></Comments>
         </div>
     );
 }

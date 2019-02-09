@@ -4,7 +4,7 @@ const comments = (props) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         const commentValue = event.target.elements.comment.value;
-        props.addComments(commentValue,props.id);
+        props.startAddingComments(commentValue,props.id);
         event.target.elements.comment.value='';
     }
     const datetime=String(new Date());
