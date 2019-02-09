@@ -6,7 +6,7 @@ const single =(props) => {
     {/*console.log(props.match)*/}
     const {match,posts}=props
     const id= Number(match.params.id)
-    const photo = posts.find((post) => {
+    const  = posts.find((post) => {
         return post.id===id;
     });
     const index = posts.findIndex((post) => {
@@ -14,12 +14,24 @@ const single =(props) => {
     });
 
     const comments = props.comments[id] || [];
-    return(
-        <div className='single-photo'>
-            <Photo photo={photo} {...props} index={index}> </Photo>
-            <Comments addComments={props.addComments} comments={comments} id={id} startAddingComments={props.startAddingComments}></Comments>
-        </div>
-    );
+    if(props.loading)
+    {
+        return <div className="loader">..Loading</div>
+    }
+    else if (photo)
+    {
+        return(
+            <div className='single-photo'>
+                <Photo photo={photo} {...props} index={index}> </Photo>
+                <Comments addComments={props.addComments} comments={comments} id={id} startAddingComments={props.startAddingComments}></Comments>
+            </div>
+        )
+    }
+    else
+    {
+        <h1>No post found</h1>
+    }
+    
 }
 
 export default single;

@@ -11,9 +11,15 @@ import '../styles/stylesheet.css';
 
 class Main extends Component{
 
+    state ={
+        loading:true
+    }
+
     componentDidMount()
     {
-        this.props.fetchPosts();
+        this.props.fetchPosts().then(() => {
+            this.setState({loading:false})
+        });
         this.props.startLoadingComments();
     }
 
@@ -36,7 +42,7 @@ class Main extends Component{
                     }/>
 
                     <Route path="/single/:id" render ={(params)=> (
-                        <Single {...this.props} {...params}></Single>
+                        <Single loading={this.state.loading} {...this.props} {...params}></Single>
                     )}/>
                         
              </div>
