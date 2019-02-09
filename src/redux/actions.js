@@ -3,17 +3,23 @@
 export const removePost = (index) => {
     return {
         type : 'REMOVE_POST',
-        index: index
+        index
     }
 }
 
 export const addPhoto = (photo) => {
     return {
         type: 'ADD_POST',
-        photo: photo
+        photo
     }
 }
 
-
+export const addComments = (comments, postId) => {
+    return {
+        type: 'ADD_COMMENT',
+        comments,
+        postId
+    }
+}
 
 //adding post

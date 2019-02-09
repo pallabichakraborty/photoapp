@@ -1,5 +1,22 @@
 import posts from '../data/posts';
+import {combineReducers} from 'redux';
 
+const commentReducer = (state ={}, action ) => {
+    switch(action.type)
+    {
+        case 'ADD_COMMENT': 
+                           if(!state[action.postId])
+                           {
+                            return {...state,[action.postId]:[action.comments]}
+                           }
+                           else
+                           {
+                            return {...state,[action.postId]:[...state[action.postId],action.comments]}
+                           }
+                           
+        default: return state
+    }
+}
 const postReducer = (state = posts , action) => {
     switch(action.type)
     {
@@ -9,4 +26,6 @@ const postReducer = (state = posts , action) => {
     }    
 }
 
-export default postReducer;
+const rootReducers = combineReducers({postReducer,commentReducer});
+
+export default rootReducers;

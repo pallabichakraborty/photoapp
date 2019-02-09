@@ -7,7 +7,10 @@ import {withRouter} from 'react-router'
 
 
 const mapStateToProps = (state) => {
-    return {posts: state};
+    return {
+             posts: state.postReducer,
+             comments: state.commentReducer
+            };
 }
 
 const mapDispatchToProps = (dispatch) => {
