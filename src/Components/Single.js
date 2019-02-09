@@ -6,7 +6,7 @@ const single =(props) => {
     {/*console.log(props.match)*/}
     const {match,posts}=props
     const id= Number(match.params.id)
-    const  = posts.find((post) => {
+    const photo = posts.find((post) => {
         return post.id===id;
     });
     const index = posts.findIndex((post) => {
@@ -29,7 +29,7 @@ const single =(props) => {
     }
     else
     {
-        <h1>No post found</h1>
+        return <h1>No post</h1>
     }
     
 }
