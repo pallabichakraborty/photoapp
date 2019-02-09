@@ -6,11 +6,11 @@ import {Link} from 'react-router-dom';
 const Photo = (props) =>  {
         const photo= props.photo;
         return (
-                <figure className={'figure'}>
+                <figure className="figure shadow">
                     <Link to={`/single/${photo.id}`}><img className='photo' src={photo.imageLink} alt={photo.description}></img></Link>
-                    <figcaption><p>{photo.description}</p></figcaption>
+                    <figcaption><p className="photo-caption">{photo.description}</p></figcaption>
                     <div className='button-container'>
-                    <button className='remove-button' 
+                    <button className="remove-button mr-2" 
                             onClick={() => {
                                              props.deletePosts(props.index,photo.id)
                                              props.history.push("/")
